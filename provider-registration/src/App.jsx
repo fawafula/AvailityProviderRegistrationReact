@@ -21,7 +21,8 @@ const App = () => {
       type: "text",
       placeholder: "First Name",
       errorMessage: "Only letters allowed.",
-      label: "First Name"
+      label: "First Name",
+      required: true
     },
     {
       id: 2,
@@ -29,7 +30,8 @@ const App = () => {
       type: "text",
       placeholder: "Last Name",
       errorMessage: "Only letters allowed",
-      label: "Last Name"
+      label: "Last Name",
+      required: true
     },
     {
       id: 3,
@@ -37,7 +39,8 @@ const App = () => {
       type: "text",
       placeholder: "NPI Number",
       errorMessage: "Enter a valid NPI number",
-      label: "NPI Number"
+      label: "NPI Number",
+      required: true
     },
     {
       id: 4,
@@ -45,7 +48,8 @@ const App = () => {
       type: "address",
       placeholder: "Business Address",
       errorMessage: "Enter a valid address",
-      label: "Bussiness Address"
+      label: "Bussiness Address",
+      required: true
     },
     {
       id: 5,
@@ -61,7 +65,8 @@ const App = () => {
       type: "email",
       placeholder: "Email",
       errorMessage: "Enter a valid email address.",
-      label: "Email"
+      label: "Email",
+      required: true
     }
   ]
 
