@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { useState } from 'react';
 import './App.css';
 import { FormInput } from './components/FormInput';
@@ -20,8 +19,9 @@ const App = () => {
       name: "firstName",
       type: "text",
       placeholder: "First Name",
-      errorMessage: "Only letters allowed.",
+      errorMessage: "No less than 3 and no more than 20 characters.",
       label: "First Name",
+      pattern: "^[A-Za-z0-9]{3,20}$",
       required: true
     },
     {
@@ -29,7 +29,7 @@ const App = () => {
       name: "lasttName",
       type: "text",
       placeholder: "Last Name",
-      errorMessage: "Only letters allowed",
+      errorMessage: "No less than 3 and no more than 20 characters.",
       label: "Last Name",
       required: true
     },
