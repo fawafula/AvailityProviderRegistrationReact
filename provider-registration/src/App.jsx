@@ -1,17 +1,27 @@
+import { useRef } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { FormInput } from './components/FormInput';
 
-function App() {
+const App = () => {
+
+  // const [firstName, setFirstName] = useState("")
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+  }
+
   return (
     <div className="App">
-      <form action=""></form>
-      <FormInput placeholder="First Name" />
-      <FormInput placeholder="Last Name" />
-      <FormInput placeholder="NPI Number" />
-      <FormInput placeholder="business Address" />
-      <FormInput placeholder="Phone Number" />
-      <FormInput placeholder="Email Address" />
-
+      <form onSubmit={handleSubmit}>
+        <FormInput name="firstName" placeholder="First Name" />
+        <FormInput name="lastName" placeholder="Last Name" />
+        <FormInput name="npiNumber" placeholder="NPI Number" />
+        <FormInput name="buisnessAddress" placeholder="Business Address" />
+        <FormInput name="phoneNumber" placeholder="Phone Number" />
+        <FormInput name="emailAddress" placeholder="Email Address" />
+        <button>Submit</button>
+      </form>
     </div>
   );
 }

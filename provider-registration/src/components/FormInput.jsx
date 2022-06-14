@@ -4,8 +4,8 @@ import "./formInput.css";
 export const FormInput = (props) => {
     return (
         <div className='formInput'>
-            <label htmlFor=""></label>
-            <input placeholder={props.placeholder} />
+            {/* <label htmlFor=""></label> */}
+            <input name={props.name} placeholder={props.placeholder} />
         </div>
     )
 }
