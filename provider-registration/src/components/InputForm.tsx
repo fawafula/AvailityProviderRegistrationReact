@@ -1,5 +1,9 @@
 import React from 'react'
 
+interface Props {
+
+}
+
 const InputForm = () => {
     return (
         <form action="submit">

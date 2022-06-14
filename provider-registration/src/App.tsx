@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import InputForm from './components/InputForm';
 
 const App: React.FC = () => {
+
   return (
     <div className="App">
       <span className='heading'>Availity Registration</span>
