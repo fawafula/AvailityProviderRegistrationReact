@@ -20,6 +20,7 @@ const App = () => {
       name: "firstName",
       type: "text",
       placeholder: "First Name",
+      errorMessage: "Only letters allowed.",
       label: "First Name"
     },
     {
@@ -27,6 +28,7 @@ const App = () => {
       name: "lasttName",
       type: "text",
       placeholder: "Last Name",
+      errorMessage: "Only letters allowed",
       label: "Last Name"
     },
     {
@@ -34,6 +36,7 @@ const App = () => {
       name: "npiNumber",
       type: "text",
       placeholder: "NPI Number",
+      errorMessage: "Enter a valid NPI number",
       label: "NPI Number"
     },
     {
@@ -41,6 +44,7 @@ const App = () => {
       name: "businessAddress",
       type: "address",
       placeholder: "Business Address",
+      errorMessage: "Enter a valid address",
       label: "Bussiness Address"
     },
     {
@@ -48,6 +52,7 @@ const App = () => {
       name: "phoneNumber",
       type: "phone",
       placeholder: "Phone Number",
+      errorMessage: "Enter a valid phone number.",
       label: "Phone Number"
     },
     {
@@ -55,6 +60,7 @@ const App = () => {
       name: "email",
       type: "email",
       placeholder: "Email",
+      errorMessage: "Enter a valid email address.",
       label: "Email"
     }
   ]
@@ -70,6 +76,7 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
+        <h1>Provider Registration</h1>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
