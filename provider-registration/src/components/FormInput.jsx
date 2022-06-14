@@ -14,7 +14,12 @@ export const FormInput = (props) => {
     return (
         <div className='formInput'>
             <label htmlFor="">{label}</label>
-            <input {...inputProps} onChange={onChange} onBlur={handleFocus} focused={focused.toString()} />
+            <input
+                {...inputProps}
+                onChange={onChange}
+                onBlur={handleFocus}
+                focused={focused.toString()}
+            />
             <span>{errorMessage}</span>
         </div>
     )
