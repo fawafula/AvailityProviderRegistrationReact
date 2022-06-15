@@ -11,6 +11,9 @@
 }
 
 table {
+  position: relative;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-collapse: collapse;
   width: 100%;
 }
@@ -24,11 +27,12 @@ td {
 }
 
 th {
-  background-color: rgb(117, 201, 250);
+  background-color:grey;
+  font-size: smaller;
 }
 
 td {
-  background-color: rgb(205, 235, 253);
+  background-color:thistle;
 }
 
 form {
