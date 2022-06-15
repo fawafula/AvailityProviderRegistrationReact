@@ -6,6 +6,8 @@
   height: 100vh;
   gap: 50px;
   padding: 1rem;
+  background-color: aliceblue;
+
 }
 
 table {
@@ -32,6 +34,8 @@ td {
 form {
   display: flex;
   gap: 5px;
+  background-color: beige;
+  margin: 10px 5px;
 }
 
 form td:last-child {
@@ -44,9 +48,26 @@ form * {
 }
 
 .input {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
-  margin: 0px 5px ;
+  margin: 5px 5px ;
   height: 10px;
-  width: 120px;
+  width: 150px;
   font-size: smaller;
-} 
+}
+
+.submitButton {
+  padding: 10px;
+  width: 80px;
+  height: 40px;
+  font-size: smaller;
+  background-color: blueviolet;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
