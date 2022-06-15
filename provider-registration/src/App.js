@@ -128,7 +128,18 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className="App">          
+      <h2>Register Provider</h2>
+      <form onSubmit={handleFormSubmit}>
+        <input type= "text" name="firstName" required="required" placeholder="First Name" onChange={handleDataChange}/>
+        <input type= "text" name="lastName" required="required" placeholder="Last Name" onChange={handleDataChange}/>
+        <input type= "text" name="npiNumber" required="required" placeholder="NPI Number" onChange={handleDataChange}/>
+        <input type= "address" name="businessAddress" required="required" placeholder="Business Address" onChange={handleDataChange}/>
+        <input type= "phone" name="phoneNumber" required="required" placeholder="Phone Number" onChange={handleDataChange}/>
+        <input type= "email" name="email" required="required" placeholder="Email" onChange={handleDataChange}/>
+        <button type="submit">Submit</button>
+      </form>
+
       <form onSubmit={handleEditFormSubmit}>
       <table>
         <thead>
@@ -157,17 +168,6 @@ const App = () => {
           
         </tbody>
       </table>
-      </form>
-      
-      <h2>Register Provider</h2>
-      <form onSubmit={handleFormSubmit}>
-        <input type= "text" name="firstName" required="required" placeholder="First Name" onChange={handleDataChange}/>
-        <input type= "text" name="lastName" required="required" placeholder="Last Name" onChange={handleDataChange}/>
-        <input type= "text" name="npiNumber" required="required" placeholder="NPI Number" onChange={handleDataChange}/>
-        <input type= "address" name="businessAddress" required="required" placeholder="Business Address" onChange={handleDataChange}/>
-        <input type= "phone" name="phoneNumber" required="required" placeholder="Phone Number" onChange={handleDataChange}/>
-        <input type= "email" name="email" required="required" placeholder="Email" onChange={handleDataChange}/>
-        <button type="submit">Submit</button>
       </form>
     
     </div>
