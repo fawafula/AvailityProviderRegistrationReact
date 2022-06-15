@@ -112,6 +112,10 @@ const App = () => {
 
   };
 
+  const handleCancelClick = () => {
+     setEditProviderId(null);
+  }
+
   return (
     <div className="App">
       <form onSubmit={handleEditFormSubmit}>
@@ -131,7 +135,7 @@ const App = () => {
           {providers.map((provider) => (
             <Fragment>
               {editProviderId === provider.id ? (
-                <ProviderEditRow editFormData={editFormData} handleDataEditChange={handleDataEditChange}/>
+                <ProviderEditRow editFormData={editFormData} handleDataEditChange={handleDataEditChange} handleCancelClick={handleCancelClick}/>
               ) :  (
                 <ProviderReadRow provider={provider} handleEditClick={handleEditClick}/>
               )}
