@@ -7,6 +7,27 @@ const App = () => {
 
   const [providers, setProviders] = useState(data);
 
+  const [addFormData, setAddFormData] = useState({
+    firstName: '',
+    lastName: '',
+    npiNumber: '',
+    businessAddress: '',
+    phoneNumber: '',
+    email: ''
+  });
+
+  const handleDataChange = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = {...addFormData};
+    newFormData[fieldName] = fieldValue;
+
+    setAddFormData(newFormData);
+
+  }
 
   return (
     <div className="App">
@@ -38,13 +59,13 @@ const App = () => {
       
       <h2>Register Provider</h2>
       <form>
-        <input type= "text" name="firstName" required="required" placeholder="First Name"/>
-        <input type= "text" name="lastName" required="required" placeholder="Last Name"/>
-        <input type= "text" name="npiNumber" required="required" placeholder="NPI Number"/>
-        <input type= "address" name="businessAddress" required="required" placeholder="Business Address"/>
-        <input type= "phone" name="phoneNumber" required="required" placeholder="Phone Number"/>
-        <input type= "email" name="email" required="required" placeholder="Email"/>
-
+        <input type= "text" name="firstName" required="required" placeholder="First Name" onChange={handleDataChange}/>
+        <input type= "text" name="lastName" required="required" placeholder="Last Name" onChange={handleDataChange}/>
+        <input type= "text" name="npiNumber" required="required" placeholder="NPI Number" onChange={handleDataChange}/>
+        <input type= "address" name="businessAddress" required="required" placeholder="Business Address" onChange={handleDataChange}/>
+        <input type= "phone" name="phoneNumber" required="required" placeholder="Phone Number" onChange={handleDataChange}/>
+        <input type= "email" name="email" required="required" placeholder="Email" onChange={handleDataChange}/>
+        <button type="submit">Submit</button>
       </form>
     
     </div>
