@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProviderReadRow = ({ provider }) => {
+const ProviderReadRow = ({ provider, handleEditClick }) => {
   return (
     <tr>
       <td>{provider.firstName}</td>
@@ -9,6 +9,10 @@ const ProviderReadRow = ({ provider }) => {
       <td>{provider.businessAddress}</td>
       <td>{provider.phoneNumber}</td>
       <td>{provider.email}</td>
+      <td>
+        <button type='button' onClick={(event)=> handleEditClick(event, provider)}>Edit</button>
+      </td>
+
   </tr>
   )
 }

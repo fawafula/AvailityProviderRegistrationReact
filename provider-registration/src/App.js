@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { nanoid } from 'nanoid';
 import './App.css';
 import data from "./mock-data.json";
 import ProviderReadRow from "./components/ProviderReadRow";
+import ProviderEditRow from "./components/ProviderEditRow";
 
 const App = () => {
 
@@ -18,6 +19,8 @@ const App = () => {
     email: ''
   });
 
+  const [editProviderId, setEditProviderId] = useState(null);
+
   const handleDataChange = (event) => {
     event.preventDefault();
 
@@ -29,7 +32,7 @@ const App = () => {
 
     setAddFormData(newFormData);
 
-  }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -46,10 +49,17 @@ const App = () => {
 
     const newProviders = [...providers, newProvider];
     setProviders(newProviders);
-  }
+  };
+
+  const handleEditClick = (event, provider) => {
+      event.preventDefault();
+      setEditProviderId(provider.id);
+
+  };
 
   return (
     <div className="App">
+      <form>
       <table>
         <thead>
           <tr>
@@ -59,15 +69,21 @@ const App = () => {
             <th>Business Address</th>
             <th>Phone Number</th>
             <th>Email Address</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {providers.map((provider) => (
-             <ProviderReadRow provider={provider}/> 
+            <Fragment>
+              {editProviderId === provider.id ? (<ProviderEditRow/>) :  (<ProviderReadRow provider={provider} handleEditClick={handleEditClick}/>)}
+               
+             
+            </Fragment> 
           ))}
           
         </tbody>
       </table>
+      </form>
       
       <h2>Register Provider</h2>
       <form onSubmit={handleFormSubmit}>
