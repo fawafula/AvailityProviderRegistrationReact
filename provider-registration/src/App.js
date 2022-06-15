@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { nanoid } from 'nanoid';
 import './App.css';
 import data from "./mock-data.json";
+import ProviderReadRow from "./components/ProviderReadRow";
 
 const App = () => {
 
@@ -62,14 +63,7 @@ const App = () => {
         </thead>
         <tbody>
           {providers.map((provider) => (
-              <tr>
-              <td>{provider.firstName}</td>
-              <td>{provider.lastName}</td>
-              <td>{provider.npiNumber}</td>
-              <td>{provider.businessAddress}</td>
-              <td>{provider.phoneNumber}</td>
-              <td>{provider.email}</td>
-            </tr>
+             <ProviderReadRow provider={provider}/> 
           ))}
           
         </tbody>
