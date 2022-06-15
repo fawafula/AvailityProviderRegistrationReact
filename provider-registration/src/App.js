@@ -1,6 +1,13 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState } from "react";
 import './App.css';
+import data from "./mock-data.json";
 
 const App = () => {
+
+  const [providers, setProviders] = useState(data);
+
+
   return (
     <div className="App">
       <table>
@@ -15,14 +22,17 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Jon</td>
-            <td>Doe</td>
-            <td>123456789</td>
-            <td>123 Main St. Denver CO</td>
-            <td>123-456-2345</td>
-            <td>doe.jon@somemail.com</td>
-          </tr>
+          {providers.map((provider) => (
+              <tr>
+              <td>{provider.firstName}</td>
+              <td>{provider.lastName}</td>
+              <td>{provider.npiNumber}</td>
+              <td>{provider.businessAddress}</td>
+              <td>{provider.phoneNumber}</td>
+              <td>{provider.email}</td>
+            </tr>
+          ))}
+          
         </tbody>
       </table>
     </div>
