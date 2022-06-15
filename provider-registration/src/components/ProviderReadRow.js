@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProviderReadRow = ({ provider, handleEditClick }) => {
+const ProviderReadRow = ({ provider, handleEditClick, handleDeleteClick }) => {
   return (
     <tr>
       <td>{provider.firstName}</td>
@@ -11,6 +11,7 @@ const ProviderReadRow = ({ provider, handleEditClick }) => {
       <td>{provider.email}</td>
       <td>
         <button type='button' onClick={(event)=> handleEditClick(event, provider)}>Edit</button>
+        <button type="button" onClick={() => handleDeleteClick(provider.id)}>Delete</button>
       </td>
 
   </tr>

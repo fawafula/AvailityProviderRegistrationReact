@@ -114,6 +114,17 @@ const App = () => {
 
   const handleCancelClick = () => {
      setEditProviderId(null);
+  };
+
+  const handleDeleteClick = (providerId) => {
+      const newProviders = [...providers];
+
+      const index = providers.findIndex((provider) => provider.id === providerId);
+
+      newProviders.splice(index, 1);
+
+      setProviders(newProviders);
+
   }
 
   return (
@@ -137,7 +148,7 @@ const App = () => {
               {editProviderId === provider.id ? (
                 <ProviderEditRow editFormData={editFormData} handleDataEditChange={handleDataEditChange} handleCancelClick={handleCancelClick}/>
               ) :  (
-                <ProviderReadRow provider={provider} handleEditClick={handleEditClick}/>
+                <ProviderReadRow provider={provider} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick}/>
               )}
                
              
