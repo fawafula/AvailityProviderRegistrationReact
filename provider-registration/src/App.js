@@ -71,6 +71,30 @@ const App = () => {
     setProviders(newProviders);
   };
 
+  const handleEditFormSubmit = (event) => {
+      event.preventDefault();
+
+      const editedProvider = {
+        id: editProviderId,
+        firstName: editFormData.firstName,
+        lastName: editFormData.lastName,
+        npiNumber: editFormData.npiNumber,
+        businessAddress: editFormData.businessAddress,
+        phoneNumber: editFormData.phoneNumber,
+        email: editFormData.email
+      };
+
+      const newProviders = [...providers];
+
+      const index = providers.findIndex((provider) => provider.id === editProviderId);
+
+      newProviders[index] = editedProvider;
+
+      setProviders(newProviders);
+      setEditProviderId(null);
+
+  }
+
   const handleEditClick = (event, provider) => {
       event.preventDefault();
       setEditProviderId(provider.id);
