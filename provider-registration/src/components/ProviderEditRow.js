@@ -1,8 +1,9 @@
 import React from 'react'
+import "./tableRow.css"
 
 const ProviderEditRow = ({editFormData, handleDataEditChange, handleCancelClick}) => {
   return (
-    <tr>
+    <tr className='tableRow'>
         <td>
             <input type="text" name="firstName" value={editFormData.firstName} required="required" placeholder="First Name" onChange={handleDataEditChange}/>
         </td>

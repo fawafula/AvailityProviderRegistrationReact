@@ -1,8 +1,9 @@
 import React from 'react'
+import "./tableRow.css"
 
 const ProviderReadRow = ({ provider, handleEditClick, handleDeleteClick }) => {
   return (
-    <tr>
+    <tr className='tableRow'>
       <td>{provider.firstName}</td>
       <td>{provider.lastName}</td>
       <td>{provider.npiNumber}</td>

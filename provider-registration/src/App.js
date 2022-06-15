@@ -3,8 +3,8 @@ import React, { useState, Fragment } from "react";
 import { nanoid } from 'nanoid';
 import './App.css';
 import data from "./mock-data.json";
-import ProviderReadRow from "./components/table/ProviderReadRow";
-import ProviderEditRow from "./components/table/ProviderEditRow";
+import ProviderReadRow from "./components/ProviderReadRow";
+import ProviderEditRow from "./components/ProviderEditRow";
 
 const App = () => {
 
@@ -128,16 +128,16 @@ const App = () => {
   }
 
   return (
-    <div className="App">          
+    <div className="App">  
       <h2>Register Provider</h2>
-      <form onSubmit={handleFormSubmit}>
-        <input type= "text" name="firstName" required="required" placeholder="First Name" onChange={handleDataChange}/>
-        <input type= "text" name="lastName" required="required" placeholder="Last Name" onChange={handleDataChange}/>
-        <input type= "text" name="npiNumber" required="required" placeholder="NPI Number" onChange={handleDataChange}/>
-        <input type= "address" name="businessAddress" required="required" placeholder="Business Address" onChange={handleDataChange}/>
-        <input type= "phone" name="phoneNumber" required="required" placeholder="Phone Number" onChange={handleDataChange}/>
-        <input type= "email" name="email" required="required" placeholder="Email" onChange={handleDataChange}/>
-        <button type="submit">Submit</button>
+      <form className="regirstationForm" onSubmit={handleFormSubmit}>
+        <input className="input" type= "text" name="firstName" required="required" placeholder="First Name" onChange={handleDataChange}/>
+        <input className="input" type= "text" name="lastName" required="required" placeholder="Last Name" onChange={handleDataChange}/>
+        <input className="input" type= "text" name="npiNumber" required="required" placeholder="NPI Number" onChange={handleDataChange}/>
+        <input className="input" type= "address" name="businessAddress" required="required" placeholder="Business Address" onChange={handleDataChange}/>
+        <input className="input" type= "phone" name="phoneNumber" required="required" placeholder="Phone Number" onChange={handleDataChange}/>
+        <input className="input" type= "email" name="email" required="required" placeholder="Email" onChange={handleDataChange}/>
+        <button className="submitButton" type="submit">Submit</button>
       </form>
 
       <form onSubmit={handleEditFormSubmit}>
