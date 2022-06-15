@@ -19,6 +19,15 @@ const App = () => {
     email: ''
   });
 
+  const [editFormData, setEditFormData] = useState({
+    firstName: '',
+    lastName: '',
+    npiNumber: '',
+    businessAddress: '',
+    phoneNumber: '',
+    email: ''
+  });
+
   const [editProviderId, setEditProviderId] = useState(null);
 
   const handleDataChange = (event) => {
@@ -34,6 +43,17 @@ const App = () => {
 
   };
 
+  const handleDataEditChange = (event) => {
+    event.preventDefault();
+    const fieldName = event.target.getAttribute("name");
+    const fieldValue = event.target.value;
+
+    const newFormData = {...editFormData};
+    newFormData[fieldName] = fieldValue;
+
+    setEditFormData(newFormData);
+  }
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -45,7 +65,7 @@ const App = () => {
       businessAddress: addFormData.businessAddress,
       phoneNumber: addFormData.phoneNumber,
       email: addFormData.email
-    }
+    };
 
     const newProviders = [...providers, newProvider];
     setProviders(newProviders);
@@ -54,6 +74,17 @@ const App = () => {
   const handleEditClick = (event, provider) => {
       event.preventDefault();
       setEditProviderId(provider.id);
+
+      const formValues = {
+        firstName: provider.firstName,
+        lastName: provider.lastName,
+        npiNumber: provider.npiNumber,
+        businessAddress: provider.businessAddress,
+        phoneNumber: provider.phoneNumber,
+        email: provider.email
+      };
+
+      setEditFormData(formValues);
 
   };
 
@@ -75,7 +106,11 @@ const App = () => {
         <tbody>
           {providers.map((provider) => (
             <Fragment>
-              {editProviderId === provider.id ? (<ProviderEditRow/>) :  (<ProviderReadRow provider={provider} handleEditClick={handleEditClick}/>)}
+              {editProviderId === provider.id ? (
+                <ProviderEditRow editFormData={editFormData} handleDataEditChange={handleDataEditChange}/>
+              ) :  (
+                <ProviderReadRow provider={provider} handleEditClick={handleEditClick}/>
+              )}
                
              
             </Fragment> 
