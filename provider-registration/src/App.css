@@ -33,6 +33,7 @@ th {
 
 td {
   background-color:thistle;
+  font-size: 20px;
 }
 
 form {
@@ -40,6 +41,7 @@ form {
   gap: 5px;
   background-color: beige;
   margin: 10px 5px;
+  font-size: 20px;
 }
 
 form td:last-child {
@@ -47,9 +49,6 @@ form td:last-child {
   justify-content: space-evenly;
 }
 
-form * {
-  font-size: 28px;
-}
 
 .input {
   display: flex;
