@@ -35,6 +35,18 @@ const App = () => {
           
         </tbody>
       </table>
+      
+      <h2>Register Provider</h2>
+      <form>
+        <input type= "text" name="firstName" required="required" placeholder="First Name"/>
+        <input type= "text" name="lastName" required="required" placeholder="Last Name"/>
+        <input type= "text" name="npiNumber" required="required" placeholder="NPI Number"/>
+        <input type= "address" name="businessAddress" required="required" placeholder="Business Address"/>
+        <input type= "phone" name="phoneNumber" required="required" placeholder="Phone Number"/>
+        <input type= "email" name="email" required="required" placeholder="Email"/>
+
+      </form>
+    
     </div>
   );
 }
