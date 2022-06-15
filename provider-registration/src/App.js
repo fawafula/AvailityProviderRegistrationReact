@@ -114,7 +114,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <form>
+      <form onSubmit={handleEditFormSubmit}>
       <table>
         <thead>
           <tr>
