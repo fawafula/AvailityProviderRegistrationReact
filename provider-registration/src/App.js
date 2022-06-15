@@ -3,8 +3,8 @@ import React, { useState, Fragment } from "react";
 import { nanoid } from 'nanoid';
 import './App.css';
 import data from "./mock-data.json";
-import ProviderReadRow from "./components/ProviderReadRow";
-import ProviderEditRow from "./components/ProviderEditRow";
+import ProviderReadRow from "./components/table/ProviderReadRow";
+import ProviderEditRow from "./components/table/ProviderEditRow";
 
 const App = () => {
 
